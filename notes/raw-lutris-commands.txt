@@ -1,0 +1,169 @@
+# Making Games Work
+
+
+sudo pacman -S wine
+
+pacman -Ss lib32
+
+sudo pacman -S lib32-aalib
+
+sudo pacman -S lib32-acl
+
+sudo pacman -S lib32-duktape
+
+sudo pacman -S lib32-fakeroot
+
+sudo pacman -S lib32-gamemode
+
+sudo pacman -S gamemode
+
+sudo pacman -S lib32-gdk-pixbuf2
+
+sudo pacman -S lib32-glew
+
+sudo pacman -S lib32-glm
+
+sudo pacman -S lib32-gmp
+
+sudo pacman -S lib32-gnutls
+
+sudo pacman -S lib32-gst-plugins-good
+
+sudo pacman -S lib32-gtk3
+
+sudo pacman -S lib32-jansson
+
+sudo pacman -S lutris
+
+sudo pacman -S winetricks
+
+mkdir Oldgames-Prefix
+
+WINEPREFIX="/home/kenny/Oldgames-Prefix" winecfg
+
+WINEPREFIX="/home/kenny/Oldgames-Prefix" winetricks
+
+sudo pacman -S zenity
+
+WINEPREFIX="/home/kenny/Oldgames-Prefix" winetricks
+You opted in, so reporting 'd3dcompiler_42 d3dcompiler_43 d3dx10 d3dx9 vcrun2003 vcrun2005 vcrun2008 vcrun2010 vcrun2012 vcrun2013 w_workaround_wine_bug-50894 vcrun2015 ' to the winetricks maintainer so he knows which winetricks verbs get used and which don't.  Use --optout to disable future reports.
+
+sudo pacman -S wine-mono
+
+sudo pacman -S git
+
+git clone https://github.com/doitsujin/dxvk.git
+
+cd dxvk
+
+./package-release.sh master . --no-package
+./package-release.sh: line 69: meson: command not found
+
+./package-release.sh master --no-package
+realpath: unrecognized option '--no-package'
+Try 'realpath --help' for more information.
+
+cd
+
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
+--2026-01-03 16:11:38--  https://aur.archlinux.org/cgit/aur.git/snapshot/yay.tar.gz
+Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+Resolving aur.archlinux.org (aur.archlinux.org)... 209.126.35.78, 2604:cac0:a104:d::2
+Connecting to aur.archlinux.org (aur.archlinux.org)|209.126.35.78|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-gzip]
+Saving to: ‘yay.tar.gz’
+
+yay.tar.gz             [ <=>           ]   1.01K  --.-KB/s    in 0s      
+
+2026-01-03 16:11:39 (11.7 MB/s) - ‘yay.tar.gz’ saved [1032]
+
+tar -xvzf yay.tar.gz
+yay/
+yay/.SRCINFO
+yay/.gitignore
+yay/PKGBUILD
+
+cd yay
+
+makepkg -csi
+==> Making package: yay 12.5.7-1 (Sat 03 Jan 2026 04:16:02 PM +03)
+==> Checking runtime dependencies...
+==> Checking buildtime dependencies...
+==> Installing missing dependencies...
+[sudo] password for kenny: 
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) go-2:1.25.5-1
+
+Total Download Size:    36.11 MiB
+Total Installed Size:  191.60 MiB
+
+:: Proceed with installation? [Y/n] y
+==> Leaving fakeroot environment.
+==> Finished making: yay 12.5.7-1 (Sat 03 Jan 2026 04:17:47 PM +03)
+==> Installing package yay with pacman -U...
+[sudo] password for kenny: 
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (2) yay-12.5.7-1  yay-debug-12.5.7-1
+
+Total Installed Size:  23.56 MiB
+
+:: Proceed with installation? [Y/n] y
+:: Processing package changes...
+(1/2) installing yay                               [################] 100%
+Optional dependencies for yay
+    sudo: privilege elevation [installed]
+    doas: privilege elevation
+(2/2) installing yay-debug                         [################] 100%
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+==> Cleaning up...
+
+cd..
+
+sudo rm -R yay
+
+yay -S dxvk-bin
+
+WINEPREFIX="/home/kenny/Oldgames-Prefix" setup_dxvk install
+
+pacman -Ss vulkan
+
+sudo pacman -S vulkan
+error: target not found: vulkan
+
+sudo pacman -S vulkan-icd-loader vulkan-validation-layers vulkan-tools
+warning: vulkan-icd-loader-1.4.335.0-1 is up to date -- reinstalling
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (3) vulkan-icd-loader-1.4.335.0-1  vulkan-tools-1.4.335.0-1
+             vulkan-validation-layers-1.4.335.0-1
+
+Total Download Size:    6.44 MiB
+Total Installed Size:  26.42 MiB
+Net Upgrade Size:      25.84 MiB
+
+:: Proceed with installation? [Y/n] y
+
+sudo pacman -S vulkan-radeon
+[sudo] password for kenny: 
+warning: vulkan-radeon-1:25.3.2-1 is up to date -- reinstalling
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) vulkan-radeon-1:25.3.2-1
+
+Total Installed Size:  16.00 MiB
+Net Upgrade Size:       0.00 MiB
+
+:: Proceed with installation? [Y/n] n
+
+sudo pacman -S vkd3d
+
+So far can't make the lutris see the dxvk, vulkan or vkd3d but i can play the game.
