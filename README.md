@@ -9,7 +9,7 @@ I use Arch-based Linux systems (currently Omarchy) and I am learning by installi
 - Notes about Linux installation and reinstallation
 - Troubleshooting system and driver issues
 - Gaming on Linux (Wine, Lutris, Bottles)
-- NVIDIA GPU related problems and how I resolved or worked around them
+- Experience dealing with NVIDIA GPU issues on Linux systems
 - Small command explanations I needed to reuse
 
 ## Why this repository exists
